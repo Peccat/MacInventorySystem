@@ -64,6 +64,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(775, 200);
             this.panel1.TabIndex = 0;
+            this.panel1.VisibleChanged += new System.EventHandler(this.panel1_VisibleChanged);
             // 
             // panel3
             // 
@@ -78,7 +79,7 @@
             // lbl_monthlyIncome
             // 
             this.lbl_monthlyIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbl_monthlyIncome.Location = new System.Drawing.Point(159, 7);
+            this.lbl_monthlyIncome.Location = new System.Drawing.Point(151, 7);
             this.lbl_monthlyIncome.Name = "lbl_monthlyIncome";
             this.lbl_monthlyIncome.Size = new System.Drawing.Size(187, 47);
             this.lbl_monthlyIncome.TabIndex = 7;
@@ -89,7 +90,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(10, 24);
+            this.label6.Location = new System.Drawing.Point(21, 21);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 25);
             this.label6.TabIndex = 6;
@@ -108,7 +109,7 @@
             // lbl_DailyIncome
             // 
             this.lbl_DailyIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbl_DailyIncome.Location = new System.Drawing.Point(167, 9);
+            this.lbl_DailyIncome.Location = new System.Drawing.Point(159, 1);
             this.lbl_DailyIncome.Name = "lbl_DailyIncome";
             this.lbl_DailyIncome.Size = new System.Drawing.Size(179, 47);
             this.lbl_DailyIncome.TabIndex = 5;
@@ -119,7 +120,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(10, 9);
+            this.label5.Location = new System.Drawing.Point(10, 15);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(136, 25);
             this.label5.TabIndex = 4;
@@ -139,7 +140,7 @@
             // 
             this.lbl_customers.AutoSize = true;
             this.lbl_customers.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbl_customers.Location = new System.Drawing.Point(54, 63);
+            this.lbl_customers.Location = new System.Drawing.Point(57, 85);
             this.lbl_customers.Name = "lbl_customers";
             this.lbl_customers.Size = new System.Drawing.Size(43, 47);
             this.lbl_customers.TabIndex = 3;
@@ -149,11 +150,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(30, 9);
+            this.label4.Location = new System.Drawing.Point(18, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 25);
+            this.label4.Size = new System.Drawing.Size(119, 25);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Vásárlók";
+            this.label4.Text = "Vásárlások";
             // 
             // panel2
             // 
@@ -169,7 +170,7 @@
             // 
             this.lbl_users.AutoSize = true;
             this.lbl_users.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbl_users.Location = new System.Drawing.Point(49, 63);
+            this.lbl_users.Location = new System.Drawing.Point(55, 85);
             this.lbl_users.Name = "lbl_users";
             this.lbl_users.Size = new System.Drawing.Size(43, 47);
             this.lbl_users.TabIndex = 1;
@@ -177,13 +178,13 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(7, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 25);
+            this.label2.Size = new System.Drawing.Size(140, 54);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Felhasználók";
+            this.label2.Text = "Felhasználók (aktív)";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
@@ -200,9 +201,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(25, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Mai vásárlók";
+            this.label1.Text = "Mai vásárlások";
             // 
             // dataGridView1
             // 

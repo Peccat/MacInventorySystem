@@ -18,11 +18,7 @@ namespace MacInventoryManagement
         {
             InitializeComponent();
 
-            displayAllUsers();
-            displayAllTodCustomer();
-            displayAllCustomers();
-            displayTodIncome();
-            displayTotalIncome();
+            
         }
 
         public void displayAllTodCustomer()
@@ -58,7 +54,7 @@ namespace MacInventoryManagement
 
                     using (SqlCommand cmd = new SqlCommand(selectDat, connect))
                     {
-                        cmd.Parameters.AddWithValue("@status", "Aktív");
+                        cmd.Parameters.AddWithValue("@status", "Aktiv");
                         SqlDataReader reader = cmd.ExecuteReader();
                         if (reader.HasRows)
                         {
@@ -208,6 +204,15 @@ namespace MacInventoryManagement
                 }
 
             }
+        }
+
+        private void panel1_VisibleChanged(object sender, EventArgs e)
+        {
+            displayAllUsers();
+            displayAllTodCustomer();
+            displayAllCustomers();
+            displayTodIncome();
+            displayTotalIncome();
         }
     }
 }

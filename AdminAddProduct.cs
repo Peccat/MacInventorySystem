@@ -17,8 +17,7 @@ namespace MacInventoryManagement
         public AdminAddProduct()
         {
             InitializeComponent();
-            displayAllCAt();
-            displayAllProd();
+            
            
         }
 
@@ -50,6 +49,7 @@ namespace MacInventoryManagement
 
         public void displayAllCAt()
         {
+            cb_category.Items.Clear();
             if (checkConnect())
             {
                 try
@@ -89,8 +89,8 @@ namespace MacInventoryManagement
         public void displayAllProd()
         {
             AddProduct data = new AddProduct();
-            List<AddProduct> listUsers = data.allProduct();
-            dataGridView1.DataSource = listUsers;
+            List<AddProduct> listProd = data.allProduct();
+            dataGridView1.DataSource = listProd;
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -279,6 +279,13 @@ namespace MacInventoryManagement
 
 
             }
+        }
+
+        private void AdminAddProduct_VisibleChanged(object sender, EventArgs e)
+        {
+
+            displayAllCAt();
+            displayAllProd();
         }
     }
 }

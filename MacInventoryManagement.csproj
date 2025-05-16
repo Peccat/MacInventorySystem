@@ -113,11 +113,17 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServiceForm.cs">
+    <Compile Include="ServiceMac.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ServiceMac.Designer.cs">
+      <DependentUpon>ServiceMac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ServiceForm.Designer.cs">
-      <DependentUpon>ServiceForm.cs</DependentUpon>
+    <Compile Include="ServiceMain.Designer.cs">
+      <DependentUpon>ServiceMain.cs</DependentUpon>
     </Compile>
     <Compile Include="usersData.cs" />
     <EmbeddedResource Include="AdminAddCategories.resx">
@@ -159,8 +165,11 @@
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServiceForm.resx">
-      <DependentUpon>ServiceForm.cs</DependentUpon>
+    <EmbeddedResource Include="ServiceMac.resx">
+      <DependentUpon>ServiceMac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceMain.resx">
+      <DependentUpon>ServiceMain.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

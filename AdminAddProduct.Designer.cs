@@ -115,7 +115,7 @@
             // 
             this.cb_category.FormattingEnabled = true;
             this.cb_category.Location = new System.Drawing.Point(106, 434);
-            this.cb_category.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_category.Margin = new System.Windows.Forms.Padding(2);
             this.cb_category.Name = "cb_category";
             this.cb_category.Size = new System.Drawing.Size(98, 21);
             this.cb_category.TabIndex = 15;
@@ -123,7 +123,7 @@
             // tb_prodictID
             // 
             this.tb_prodictID.Location = new System.Drawing.Point(106, 394);
-            this.tb_prodictID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_prodictID.Margin = new System.Windows.Forms.Padding(2);
             this.tb_prodictID.Name = "tb_prodictID";
             this.tb_prodictID.Size = new System.Drawing.Size(98, 20);
             this.tb_prodictID.TabIndex = 16;
@@ -131,7 +131,7 @@
             // tb_productName
             // 
             this.tb_productName.Location = new System.Drawing.Point(106, 413);
-            this.tb_productName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_productName.Margin = new System.Windows.Forms.Padding(2);
             this.tb_productName.Name = "tb_productName";
             this.tb_productName.Size = new System.Drawing.Size(98, 20);
             this.tb_productName.TabIndex = 17;
@@ -139,7 +139,7 @@
             // tb_stock
             // 
             this.tb_stock.Location = new System.Drawing.Point(317, 394);
-            this.tb_stock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_stock.Margin = new System.Windows.Forms.Padding(2);
             this.tb_stock.Name = "tb_stock";
             this.tb_stock.Size = new System.Drawing.Size(98, 20);
             this.tb_stock.TabIndex = 19;
@@ -157,7 +157,7 @@
             // tb_price
             // 
             this.tb_price.Location = new System.Drawing.Point(317, 418);
-            this.tb_price.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_price.Margin = new System.Windows.Forms.Padding(2);
             this.tb_price.Name = "tb_price";
             this.tb_price.Size = new System.Drawing.Size(98, 20);
             this.tb_price.TabIndex = 21;
@@ -179,7 +179,7 @@
             "Elerheto",
             "Nem elerheto"});
             this.cb_status.Location = new System.Drawing.Point(317, 439);
-            this.cb_status.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_status.Margin = new System.Windows.Forms.Padding(2);
             this.cb_status.Name = "cb_status";
             this.cb_status.Size = new System.Drawing.Size(98, 21);
             this.cb_status.TabIndex = 23;
@@ -197,7 +197,7 @@
             // btn_add
             // 
             this.btn_add.Location = new System.Drawing.Point(471, 371);
-            this.btn_add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(2);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(72, 36);
             this.btn_add.TabIndex = 24;
@@ -208,7 +208,7 @@
             // btn_clear
             // 
             this.btn_clear.Location = new System.Drawing.Point(589, 419);
-            this.btn_clear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_clear.Margin = new System.Windows.Forms.Padding(2);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(77, 36);
             this.btn_clear.TabIndex = 25;
@@ -219,7 +219,7 @@
             // btn_delete
             // 
             this.btn_delete.Location = new System.Drawing.Point(589, 371);
-            this.btn_delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(2);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(77, 36);
             this.btn_delete.TabIndex = 26;
@@ -230,7 +230,7 @@
             // btn_update
             // 
             this.btn_update.Location = new System.Drawing.Point(471, 417);
-            this.btn_update.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_update.Margin = new System.Windows.Forms.Padding(2);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(75, 36);
             this.btn_update.TabIndex = 27;
@@ -241,7 +241,7 @@
             // tb_cost
             // 
             this.tb_cost.Location = new System.Drawing.Point(317, 372);
-            this.tb_cost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_cost.Margin = new System.Windows.Forms.Padding(2);
             this.tb_cost.Name = "tb_cost";
             this.tb_cost.Size = new System.Drawing.Size(98, 20);
             this.tb_cost.TabIndex = 29;
@@ -282,6 +282,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "AdminAddProduct";
             this.Size = new System.Drawing.Size(800, 475);
+            this.VisibleChanged += new System.EventHandler(this.AdminAddProduct_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

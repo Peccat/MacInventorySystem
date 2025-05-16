@@ -253,7 +253,7 @@ namespace MacInventoryManagement
         {
             if(prodID == 0)
             {
-                MessageBox.Show("Először válassz ki egy terméket!", "Information Message", MessageBoxButtons.OK);
+                MessageBox.Show("Először válassz ki egy terméket a rendelésből!", "Information Message", MessageBoxButtons.OK);
 
             }
             else
@@ -380,7 +380,7 @@ namespace MacInventoryManagement
 
                         using (SqlCommand cmd = new SqlCommand(selectData, connect))
                         {
-                            cmd.Parameters.AddWithValue("@status", "Elérheto");
+                            cmd.Parameters.AddWithValue("@status", "Elerheto");
 
                             using (SqlDataReader reader = cmd.ExecuteReader())
                             {
@@ -534,86 +534,92 @@ namespace MacInventoryManagement
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            displayTotalP();
-
-            float y = 0;
-            int count = 0;
-            int colWidth = 150;
-
-            int headerMargin = 10;
-            int tableMargin = 70;
-
-            Font font = new Font("Arial", 12);
-            Font bold = new Font("Arial", 12, FontStyle.Bold);
-            Font headerFont = new Font("Arial", 16, FontStyle.Bold);
-            Font labelFont = new Font("Arial", 14, FontStyle.Bold);
-
-            float margin = e.MarginBounds.Top;
-
-            StringFormat alignCenter = new StringFormat();
-            alignCenter.Alignment = StringAlignment.Center;
-            alignCenter.LineAlignment = StringAlignment.Center;
-
-            string headerText = "Mac Műhely";
-            y = (margin + count * headerFont.GetHeight(e.Graphics) + headerMargin);
-
-            e.Graphics.DrawString(headerText, headerFont, Brushes.Black, e.MarginBounds.Left + (dg_orders.Columns.Count / 2) * colWidth-40, y, alignCenter);
-
-            count++;
-            y += tableMargin;
-
-            string[] header = { "Kód", "Megnevezés", "Kategória", "db", "ár/db" };
-
-            for (int i = 0; i < header.Length; i++)
+            if (tb_payed.Text == "")
             {
-                y = margin + count * bold.GetHeight(e.Graphics) + tableMargin;
-                e.Graphics.DrawString(header[i], bold, Brushes.Black, e.MarginBounds.Left + i * colWidth, y, alignCenter);
+                MessageBox.Show("Adja meg a kapott összeget!", "Information Message", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-            count++;
-
-            float rSpace = e.MarginBounds.Bottom - y;
-
-            while (rowIndex < dg_orders.Rows.Count)
+            else
             {
-                DataGridViewRow row = dg_orders.Rows[rowIndex];
+                displayTotalP();
 
-                for (int i = 0; i < dg_orders.Columns.Count; i++)
+                float y = 0;
+                int count = 0;
+                int colWidth = 150;
+
+                int headerMargin = 10;
+                int tableMargin = 70;
+
+                Font font = new Font("Arial", 12);
+                Font bold = new Font("Arial", 12, FontStyle.Bold);
+                Font headerFont = new Font("Arial", 16, FontStyle.Bold);
+                Font labelFont = new Font("Arial", 14, FontStyle.Bold);
+
+                float margin = e.MarginBounds.Top;
+
+                StringFormat alignCenter = new StringFormat();
+                alignCenter.Alignment = StringAlignment.Center;
+                alignCenter.LineAlignment = StringAlignment.Center;
+
+                string headerText = "Mac Műhely";
+                y = (margin + count * headerFont.GetHeight(e.Graphics) + headerMargin);
+
+                e.Graphics.DrawString(headerText, headerFont, Brushes.Black, e.MarginBounds.Left + (dg_orders.Columns.Count / 2) * colWidth - 40, y, alignCenter);
+
+                count++;
+                y += tableMargin;
+
+                string[] header = { "Kód", "Megnevezés", "Kategória", "db", "ár/db" };
+
+                for (int i = 0; i < header.Length; i++)
                 {
-                    if (i == 0 ||i == 6 || i == 7 || i == 9)
-                    {
-
-                    }
-                    else
-                    {
-                        object cellValue = row.Cells[i].Value;
-                        string cell = (cellValue != null) ? cellValue.ToString() : string.Empty;
-
-                        y = margin + count * font.GetHeight(e.Graphics) + tableMargin;
-                        e.Graphics.DrawString(cell, font, Brushes.Black, e.MarginBounds.Left + (i-1) * colWidth, y, alignCenter);
-                    }
+                    y = margin + count * bold.GetHeight(e.Graphics) + tableMargin;
+                    e.Graphics.DrawString(header[i], bold, Brushes.Black, e.MarginBounds.Left + i * colWidth, y, alignCenter);
                 }
                 count++;
-                rowIndex++;
 
-                if (y + font.GetHeight(e.Graphics) > e.MarginBounds.Bottom)
+                float rSpace = e.MarginBounds.Bottom - y;
+
+                while (rowIndex < dg_orders.Rows.Count)
                 {
-                    e.HasMorePages = true;
-                    return;
+                    DataGridViewRow row = dg_orders.Rows[rowIndex];
+
+                    for (int i = 0; i < dg_orders.Columns.Count; i++)
+                    {
+                        if (i == 0 || i == 6 || i == 7 || i == 9)
+                        {
+
+                        }
+                        else
+                        {
+                            object cellValue = row.Cells[i].Value;
+                            string cell = (cellValue != null) ? cellValue.ToString() : string.Empty;
+
+                            y = margin + count * font.GetHeight(e.Graphics) + tableMargin;
+                            e.Graphics.DrawString(cell, font, Brushes.Black, e.MarginBounds.Left + (i - 1) * colWidth, y, alignCenter);
+                        }
+                    }
+                    count++;
+                    rowIndex++;
+
+                    if (y + font.GetHeight(e.Graphics) > e.MarginBounds.Bottom)
+                    {
+                        e.HasMorePages = true;
+                        return;
+                    }
                 }
+
+                int labelMargin = (int)Math.Min(rSpace, 200);
+
+
+                float labelX = e.MarginBounds.Right - e.Graphics.MeasureString("------------------------------", labelFont).Width;
+
+                y = e.MarginBounds.Bottom - labelMargin - labelFont.GetHeight(e.Graphics);
+                e.Graphics.DrawString("Végösszeg: \t" + totalP.ToString("0 000") + " Ft\nFizetett: \t"
+                    + int.Parse(tb_payed.Text).ToString("0 000") + " Ft\n\t\t------------\nVisszajáró: \t" + int.Parse(lbl_change.Text).ToString("0 000") + "Ft", labelFont, Brushes.Black, labelX, y);
+
+                labelMargin = (int)Math.Min(rSpace, -40);
+
             }
-
-            int labelMargin = (int)Math.Min(rSpace, 200);
-
-
-            float labelX = e.MarginBounds.Right - e.Graphics.MeasureString("------------------------------", labelFont).Width;
-
-            y = e.MarginBounds.Bottom - labelMargin - labelFont.GetHeight(e.Graphics);
-            e.Graphics.DrawString("Végösszeg: \t" + totalP + " Ft\nFizetett: \t"
-                + tb_payed.Text + " Ft\n\t\t------------\nVisszajáró: \t" + lbl_change.Text + "Ft", labelFont, Brushes.Black, labelX, y);
-
-            labelMargin = (int)Math.Min(rSpace, -40);
-
-            
 
         }
     }

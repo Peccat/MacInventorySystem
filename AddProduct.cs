@@ -100,5 +100,46 @@ namespace MacInventoryManagement
 
             return products;
         }
+
+        public List<AddProduct> allServiceProducts()
+        {
+            List<AddProduct> products = new List<AddProduct>();
+
+            using (SqlConnection connect = DatabaseString.GetConnection())
+            {
+                connect.Open();
+
+                string selectDat = "SELECT * FROM products WHERE category = @category";
+
+                using (SqlCommand cmd = new SqlCommand(selectDat, connect))
+                {
+                    cmd.Parameters.AddWithValue("@category", "szerviz");
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        AddProduct data = new AddProduct();
+                        data.ID = (int)reader["id"];
+                        data.prodID = (string)reader["prod_id"];
+                        data.prodName = (string)reader["prod_name"];
+                        data.Category = (string)reader["category"];
+                        data.price = (int)reader["price"];
+                        data.stock = (int)reader["stock"];
+                        data.status = (string)reader["status"];
+                        data.date = reader["date"].ToString();
+                        data.cost = (int)reader["cost"];
+
+
+                        products.Add(data);
+
+                    }
+
+                }
+
+            }
+
+
+
+            return products;
+        }
     }
 }

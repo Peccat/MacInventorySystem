@@ -16,5 +16,6 @@ C:\Users\simon\source\repos\MacInventoryManagement\obj\Debug\MacInventoryManagem
 C:\Users\simon\source\repos\MacInventoryManagement\obj\Debug\MacInventoryManagement.AdminAddProduct.resources
 C:\Users\simon\source\repos\MacInventoryManagement\obj\Debug\MacInventoryManagement.CashierMainF.resources
 C:\Users\simon\source\repos\MacInventoryManagement\obj\Debug\MacInventoryManagement.CashierOrder.resources
-C:\Users\simon\source\repos\MacInventoryManagement\obj\Debug\MacInventoryManagement.ServiceForm.resources
 C:\Users\simon\source\repos\MacInventoryManagement\obj\Debug\MacInventoryManagement.CashierCostumer.resources
+C:\Users\simon\source\repos\MacInventoryManagement\obj\Debug\MacInventoryManagement.ServiceMain.resources
+C:\Users\simon\source\repos\MacInventoryManagement\obj\Debug\MacInventoryManagement.ServiceMac.resources

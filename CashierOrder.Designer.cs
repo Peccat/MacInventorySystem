@@ -120,12 +120,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(216, 334);
+            this.label3.Location = new System.Drawing.Point(199, 336);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.Size = new System.Drawing.Size(106, 13);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Termék Cikkszám";
+            this.label3.Text = "Termék megnevezés";
             // 
             // label4
             // 

@@ -71,7 +71,7 @@ namespace MacInventoryManagement
                                 else if (userRole == "Szervizes")
                                 {
                                     MessageBox.Show("Bejelentkezés sikeres!", "Information Message", MessageBoxButtons.OK);
-                                    ServiceForm servicerF = new ServiceForm();
+                                    ServiceMain servicerF = new ServiceMain();
                                     servicerF.Show();
 
                                     this.Hide();
@@ -83,12 +83,10 @@ namespace MacInventoryManagement
                                 }
 
                             }
-
-                        
                         }
                         else {
 
-                            MessageBox.Show("Helytelen felhasználónév vagy jelszó!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Helytelen felhasználónév vagy jelszó VAGY a fiókja még nincs aktiválva, szóljon az adminnak!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
